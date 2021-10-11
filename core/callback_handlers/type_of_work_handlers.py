@@ -22,8 +22,7 @@ def options_write_query(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'something_else')
 def options_else_query(call):
-    print("and its to")
-
+    bot.send_message(call.message.chat.id, 'Що ти хочеш спитати?')
     @bot.message_handler(content_types=['text'], chat_types=['private'])
     def handler_text(message):
         bot.forward_message(OUR_GROUP, message.chat.id, message.id)
