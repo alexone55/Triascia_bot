@@ -1,14 +1,14 @@
 from core import bot, telebot, RULE_TEXT, GUARANTEE_TEXT
 
 
-@bot.message_handler(commands=['rules'])
+@bot.message_handler(commands=['rules'], chat_types='private')
 def option_rules_handler(message):
     print(message)
     chat_id = message.chat.id
     bot.send_message(chat_id, RULE_TEXT, parse_mode='Markdown')
 
 
-@bot.message_handler(commands=['guarantees'])
+@bot.message_handler(commands=['guarantees'], chat_types='private')
 def option_guarantees_handler(message):
     chat_id = message.chat.id
 

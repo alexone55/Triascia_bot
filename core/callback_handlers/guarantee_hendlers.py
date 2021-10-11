@@ -1,9 +1,12 @@
 from core import bot, telebot
 
 
+REFUSE_TEXT = f'На жаль, ми не можемо надати вам допомоги, сподіваємося на ваше розуміння'
+
+
 @bot.callback_query_handler(func=lambda call: call.data == 'False')
 def options_false_query(call):
-    bot.send_message(call.message.chat.id, f'Вежливый отказ')
+    bot.send_message(call.message.chat.id, REFUSE_TEXT)
 
 
 @bot.callback_query_handler(func=lambda call: call.data == 'True')
