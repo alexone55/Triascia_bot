@@ -1,0 +1,1 @@
+worker: python consult_bot.py
